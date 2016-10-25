@@ -1,0 +1,19 @@
+<!--@foreach($widget_info->content_items as $key => $item)-->
+<div class="daerew_webzine">
+	<!--@if($item->getThumbnail())--><p class="thumb"><a href="{$item->getLink()}"><img src="{$item->getThumbnail()}" width="{$widget_info->thumbnail_width}" height="{$widget_info->thumbnail_height}" alt="" /></a></p><!--@end-->
+	<h3>
+		<!--@if($widget_info->show_browser_title=='Y' && $item->getBrowserTitle())-->
+		<a class="browser" href="{getSiteUrl($item->domain, '', 'mid', $item->get('mid'))}">[{$item->getBrowserTitle()}]</a>
+		<!--@end-->
+		<!--@if($widget_info->show_category=='Y' && $item->get('category_srl') )-->
+		<a href="{getSiteUrl($item->domain,'','mid',$item->get('mid'),'category',$item->get('category_srl'))}"><span class="category">{$item->getCategory()}</span></a>
+		<!--@end-->
+		<a class="title" href="{$item->getLink()}">{$item->getTitle($widget_info->subject_cut_size)}</a>
+		<!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+		<a class="comment" href="{$item->getLink()}#comment"><!--@if($item->getCommentCount())-->[{$item->getCommentCount()}]<!--@end--></a>
+		<!--@end-->
+	</h3>
+	<p class="contents">{$item->getContent()}</p>
+	<div class="clear"></div>
+</div>
+<!--@end-->

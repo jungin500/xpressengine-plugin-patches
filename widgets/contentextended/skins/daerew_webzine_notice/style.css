@@ -1,0 +1,155 @@
+@charset "utf-8";
+/*
+HTTP://WWW.DAEREW.COM v4 Page CSS STYLE
+Author: daerew
+*/
+/*///////////////////////////////////////     daerew_webzine_notice     ///////////////////////////////////////*/
+.daerew_webzine_notice {
+	font-family: "맑은 고딕", Dotum, Gulim, Verdana, Arial, SunSans-Regular, Sans-Serif;
+	position: relative;
+	width: 100%;
+
+	/*background: url(dot.gif) repeat-x bottom center;*/
+}
+
+.daerew_webzine_notice:after {
+	content:"";
+	clear: both;
+	display: block;
+}
+	.daerew_webzine_notice h2 {
+		margin: 0;
+		font-size: 14px;
+		padding:8px;
+		border: 1px solid #ddd;
+		background-color: #fafafa;
+		
+}
+	.daerew_webzine_notice .thumb {
+		float: left;
+		margin: 5px;
+}
+	.daerew_webzine_notice .thumb img {
+		border: 1px solid #ddd;
+}
+	.daerew_webzine_notice .contents {
+			margin: 0;
+			font-size: 9pt;
+			color: #333;
+			line-height: 1.65;
+			text-align: justify;
+			border:1px solid #ddd;
+			border-top:none;
+			padding:5px;
+	}
+	.daerew_webzine_notice .more{
+		text-decoration: none;
+		position: absolute;
+		top: 13px;
+		right: 10px;
+		padding-right: 9px;
+		font-size: 11px;
+		color: #333;
+		background: url(iconMore.gif) no-repeat right center;
+		line-height: normal;
+}
+	.daerew_webzine_notice .date {
+		color: #666;
+		font-size: 7pt;
+		font-family: verdana, sans-serif;
+		font-weight: normal;
+}
+	.daerew_webzine_notice a.title{color:#333;text-decoration: none;}
+	.daerew_webzine_notice a.title:link {
+		color: #555;
+		text-decoration: none;
+}
+	.daerew_webzine_notice a.title:hover {
+		color: #000;
+		text-decoration: underline;
+}
+	.daerew_webzine_notice a.comment:link {
+		font-family: verdana, sans-serif;
+		font-size: 7pt;
+		color: #909090;
+		text-decoration: none;
+		font-weight: normal;
+}
+	.daerew_webzine_notice a.comment:hover {
+		text-decoration: underline;
+}
+	.daerew_webzine_notice .dot { 
+		background-image: url(dot.gif);
+		height: 50px;
+}
+/*///////////////////////////////////////     daerew_webzine     ///////////////////////////////////////*/
+
+.daerew_webzine {
+	font-family: Dotum, Gulim, Verdana, Arial, SunSans-Regular, Sans-Serif;
+	position: relative;
+	width: 100%;
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+	background: url(dot.gif) repeat-x bottom center;
+}
+.daerew_webzine {
+	content:"";
+	clear: both;
+	display: block;
+}
+	.daerew_webzine .thumb {
+		float: left;
+		margin :0 10px 0 0;
+
+}
+	.daerew_webzine .thumb img {
+		border: 1px solid #ddd;
+}
+	.daerew_webzine h3{ 
+		font-size: 8pt;
+		color: #808080;
+		margin-bottom: 10px; 
+		font-weight: normal;
+}
+	.daerew_webzine .contents {
+			margin: 0;
+			font-size: 8pt;
+			color: #606060;
+			line-height: 1.65;
+			text-align: justify;
+}
+	.daerew_webzine a.title { 
+		font-size: 9pt;
+		color: #4040E0; 
+		text-decoration: none;
+}
+	.daerew_webzine a.title:hover { 
+		color: #4040E0; 
+		text-decoration: underline;
+}
+	.daerew_webzine a.browser:link {
+		font-size: 8pt;
+		color: #808080;
+		text-decoration: none;
+}
+	.daerew_webzine a.browser:hover {
+		text-decoration: underline;
+}
+	.daerew_webzine a.comment:link {
+		font-family: verdana, sans-serif;
+		font-size: 7pt;
+		color: #909090;
+		text-decoration: none;
+}
+	.daerew_webzine a.comment:hover {
+		text-decoration: underline;
+}
+.daerew_webzine .category {
+		font-size: 8pt;
+		color: #704000;
+}
+.daerew_webzine .clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}

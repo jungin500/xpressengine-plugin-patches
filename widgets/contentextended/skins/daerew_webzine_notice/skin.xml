@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="1.0">
+    <title xml:lang="ko">대류의 웹진 공지사항 위젯 스킨</title>
+    <description xml:lang="ko">Content 위젯의 내용을 대류커뮤니티 v4 맞춰 웹진 형태로 출력하는 스킨입니다</description>
+    <version>1.0</version>
+    <date>2010-02-28</date>
+
+    <author email_address="daerew@naver.com" link="http://www.daerew.com">
+        <name xml:lang="ko">대류</name>
+    </author>
+
+    <colorset>
+        <color name="daerew_webzine_notice">
+            <title xml:lang="ko">웹진 공지사항 형태</title>
+        </color>
+        <color name="daerew_webzine">
+            <title xml:lang="ko">웹진 형태</title>
+        </color>
+    </colorset>
+</skin>

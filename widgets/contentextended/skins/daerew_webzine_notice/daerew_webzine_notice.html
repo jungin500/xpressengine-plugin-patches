@@ -1,0 +1,18 @@
+<!--@foreach($widget_info->content_items as $key => $item)-->
+<div class="daerew_webzine_notice">
+	<h2>
+		<!--@if($widget_info->show_browser_title=='Y' && $item->getBrowserTitle())-->
+		<!-- <a href="{getSiteUrl($item->domain, '', 'mid', $item->get('mid'))}">[{$item->getBrowserTitle()}]</a> -->
+		<!--@end-->
+		<a class="title" href="{$item->getLink()}">{$item->getTitle($widget_info->subject_cut_size)}</a>
+		<!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+		<a class="comment" href="{$item->getLink()}#comment"><!--@if($item->getCommentCount())-->[{$item->getCommentCount()}]<!--@end--></a>
+		<!--@end-->
+		<span class="date">{$item->getRegdate("y.m.d")}</span>
+	</h2>
+	<!--@if($item->getThumbnail())--><p class="thumb"><a href="{$item->getLink()}"><img src="{$item->getThumbnail()}" width="{$widget_info->thumbnail_width}" height="{$widget_info->thumbnail_height}" alt="" /></a></p><!--@end-->
+	<p class="contents">{$item->getContent()}</p>
+	<a href="{getSiteUrl($item->domain, '', 'mid', $item->get('mid'))}" class="more">more</a>
+</div>
+<!--@end-->
+
