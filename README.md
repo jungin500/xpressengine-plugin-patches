@@ -20,8 +20,14 @@ XpressEngine 연구 프로젝트
 	해당 패키지는 PHP v7.0.8, XE v1.8.26에서 정상 작동합니다.
 
 	> Changelog
-	* [2016-10-22] 변수가 NULL인 상태에서 사용된 문제 수정(Creating default object from empty value)
+	* [2016-10-22] contentextended.class.php 변수가 NULL인 상태에서 사용된 문제 수정(Creating default object from empty value)
 
+### 1.3.2 navigator
+	네비게이터 (메뉴 출력기)(https://www.xpressengine.com/index.php?mid=download&package_id=18324338)를 PHP 7.0에 맞춰 업데이트한 패키지입니다.
+	해당 패키지는 PHP v7.0.8, XE v1.8.26에서 정상 작동합니다.
+
+	> Changelog
+	* [2016-10-22] navigator.class.php 변수가 NULL인 상태에서 사용된 문제 수정(Creating default object from empty value)
 ***
 ## 1.4. 에디터 컴포넌트
 
