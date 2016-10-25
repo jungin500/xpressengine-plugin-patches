@@ -68,6 +68,19 @@ XpressEngine 연구 프로젝트
 ***
 # 3. 기타
 ## 3.1. 데이터 이전 툴
+### 2.4.1. copypict
+	[Copy Pictures]
+	이 툴은 이전 XE 버전에서 새로운 XE 버전으로 Migrate할 경우 모든 사진이 깨져 나오는 문제를 해결하기 위해 제작되었습니다.
+	--
+	사용법: copypict.sh moduleNum1 moduleNum2
+	* 최초 사용시 copypict.sh 내 최상단 설정을 변경합니다.
+	  해당 설정에는 이전 XE 주소, 새로운 XE 주소가 포함되어 있습니다.
+	* moduleNum1은 기존 XE에서의 게시판 module ID를 입력합니다.
+	* moduleNum2는 migrate 대상 XE에서의 게시판 module ID를 입력합니다.
+	
+	> Changelog
+	* [2016-10-26] XEIcon v1.x 버전에서 XEIcon v2.2.0으로 수정; 각종 아이콘 변경.
+
 
 ***
 ## 3.2. 기타
