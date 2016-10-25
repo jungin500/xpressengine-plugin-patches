@@ -15,6 +15,12 @@ XpressEngine 연구 프로젝트
 
 ***
 ## 1.3. 위젯
+### 1.3.1 contentextended
+	컨텐츠 확장 위젯(https://www.xpressengine.com/index.php?mid=download&package_id=21127741)을 PHP 7.0에 맞춰 업데이트한 패키지입니다.
+	해당 패키지는 PHP v7.0.8, XE v1.8.26에서 정상 작동합니다.
+
+	> Changelog
+	* [2016-10-22] 변수가 NULL인 상태에서 사용된 문제 수정(Creating default object from empty value)
 
 ***
 ## 1.4. 에디터 컴포넌트
@@ -35,12 +41,11 @@ XpressEngine 연구 프로젝트
 ***
 ## 2.4. 모듈 모바일 스킨
 ### 2.4.1. sweetMobileBoard
-    Sweet Mobile 모바일 게시판 스킨(https://www.xpressengine.com/index.php?mid=download&package_id=22753558)을 XEIcon v2.2.0에 맞춰 업데이트한 패키지입니다.
-    해당 패키지는 XE v1.8.26에서 정상 작동합니다.
-    
-    > Changelog
-    * [2016-10-26] XEIcon v1.x 버전에서 XEIcon v2.2.0으로 수정; 각종 아이콘 변경.
-    
+	Sweet Mobile 모바일 게시판 스킨(https://www.xpressengine.com/index.php?mid=download&package_id=22753558)을 XEIcon v2.2.0에 맞춰 업데이트한 패키지입니다.
+	해당 패키지는 XE v1.8.26에서 정상 작동합니다.
+	
+	> Changelog
+	* [2016-10-26] XEIcon v1.x 버전에서 XEIcon v2.2.0으로 수정; 각종 아이콘 변경.
 
 ***
 ## 2.5. 위젯 스킨
