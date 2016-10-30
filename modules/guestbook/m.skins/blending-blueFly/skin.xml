@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">BLENDING Guestbook Blue Fly 모바일 스킨</title>
+    <description xml:lang="ko">
+        전체적으로 블루를 사용하고 다양한 환경에 적용할수 있도록 하였습니다. 카테고리로 접근하는 형식으로 쉽게 내용에 접근할 수 있습니다.
+		NHN (developers@xpressengine.com)
+		Jung-In An (jungin500@naver.com)
+    </description>
+    <version>0.1</version>
+    <date>2016-10-30</date>
+
+    <author email_address="developers@xpressengine.com" link="http://xpressengine.com/">
+        <name xml:lang="ko">NHN</name>
+    </author>
+    <author email_address="jungin500@naver.com" link="http://home.blending.kr/">
+        <name xml:lang="ko">Jung-In An</name>
+    </author>
+
+    <license>GPL</license>
+
+</skin>
