@@ -88,7 +88,7 @@ XpressEngine 연구 프로젝트
 ## 3.1. 데이터 이전 툴
 ### 2.4.1. copypict (tools\copypict.sh)
 	[Copy Pictures]
-	이 툴은 이전 XE 버전에서 새로운 XE 버전으로 Migrate할 경우 모든 사진이 깨져 나오는 문제를 해결하기 위해 제작되었습니다.
+	이 툴은 이전 XE 버전(ex, XE v1.4)에서 새로운 XE 버전(ex, XE v1.7)으로 Migrate할 경우 모든 사진이 깨져 나오는 문제를 해결하기 위해 제작되었습니다.
 	--
 	사용법: copypict.sh moduleNum1 moduleNum2
 	* 최초 사용시 copypict.sh 내 최상단 설정을 변경합니다.
