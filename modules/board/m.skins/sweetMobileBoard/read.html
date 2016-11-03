@@ -1,3 +1,92 @@
+<!--// 이전글, 다음글 구하기 //-->
+{@$doc_count = count($document_list)}
+{@$z=0}
+<!--@foreach($document_list as $no => $document)-->
+    {@ $doc_srl[$z] = $document->document_srl}
+    <!--@if($document->document_srl == $oDocument->document_srl)-->
+        {@ $now_z = $z }
+    <!--@end-->
+    {@$z++;}
+<!--@end-->
+ 
+<!--// 현재 글이 현제 페이지에서 첫번째 글이며, 현재 페이지가 1이 아닐 때 //-->
+<!--// 이전 페이지의 document_list를 가져와서 마지막 글의 document_srl을 구한다 //-->
+<!--@if($now_z == 0 && $page > 1)-->
+    {@
+        $oModuleModel = &getModel('module');
+        $module_srl_temp = $oModuleModel->getModuleSrlByMid($mid);
+ 
+        if(is_array($module_srl_temp)) $module_srl = $module_srl_temp[0];
+        else $module_srl = $module_srl_temp;
+ 
+        $args->module_srl = $module_srl;
+        $args->category_srl = $category_srl;
+        $args->list_count = $module_info->list_count;
+        $args->search_target = $search_target;
+        $args->search_keyword = $search_keyword;
+        $args->page = $page-1;
+        $args->sort_index = $module_info->sort_index;
+        $args->order_type = $module_info->order_type;
+ 
+        $docList_output = executeQueryArray('document.getDocumentList', $args);
+    }
+ 
+    {@$x=0}
+    <!--@foreach($docList_output->data as $doc)-->
+        <!--@if($x == count($docList_output->data) - 1)-->
+            {@ $beforeDoc = $doc->document_srl }
+        <!--@end-->
+        {@$x++;}
+    <!--@end-->
+    {@ $afterDoc = $doc_srl[$now_z+1] }
+ 
+<!--// 현재 글이 현제 페이지에서 가장 마지막 글이며, 현재 페이지가 마지막 페이지가 아닐 때 //-->
+<!--// 다음 페이지의 document_list를 가져와서 첫번째 글의 document_srl을 구한다  //-->
+<!--@else if($now_z == $doc_count - 1 && $page < $total_page)-->
+    {@
+        $oModuleModel = &getModel('module');
+        $module_srl_temp = $oModuleModel->getModuleSrlByMid($mid);
+ 
+        if(is_array($module_srl_temp)) $module_srl = $module_srl_temp[0];
+        else $module_srl = $module_srl_temp;
+ 
+        $args->module_srl = $module_srl;
+        $args->category_srl = $category_srl;
+        $args->list_count = $module_info->list_count;
+        $args->search_target = $search_target;
+        $args->search_keyword = $search_keyword;
+        $args->page = $page+1;
+        $args->sort_index = $module_info->sort_index;
+        $args->order_type = $module_info->order_type;
+ 
+        $docList_output = executeQueryArray('document.getDocumentList', $args);
+    }
+ 
+    {@$x=0}
+    <!--@foreach($docList_output->data as $doc)-->
+        <!--// 첫번째 글일 경우 //-->
+        <!--@if($x == 0)-->
+            {@ $afterDoc = $doc->document_srl }
+        <!--@end-->
+        {@$x++;}
+    <!--@end-->
+    {@ $beforeDoc = $doc_srl[$now_z-1] }
+ 
+<!--// 그 외 //-->
+<!--@else-->
+    {@ $beforeDoc = $doc_srl[$now_z-1]; $afterDoc = $doc_srl[$now_z+1]; }
+<!--@end-->
+ 
+<!--@if($beforeDoc)-->
+    {@ $beforeHref = getUrl('document_srl',$beforeDoc,'listStyle',$listStyle, 'cpage','', 'page', '') }
+<!--@else-->
+    {@ $beforeHref = "javascript:;" }
+<!--@end-->
+<!--@if($afterDoc)-->
+    {@ $afterHref = getUrl('document_srl',$afterDoc,'listStyle',$listStyle, 'cpage','', 'page', '') }
+<!--@else-->
+    {@ $afterHref = "javascript:;" }
+<!--@end-->
 {@ Context::addJsFile("./common/js/jquery.js", true, '', -100000) }
 {@ Context::addJsFile("./common/js/js_app.js", true, '', -100000) }
 {@ Context::addJsFile("./common/js/common.js", true, '', -100000) }
@@ -7,6 +96,8 @@
 <!--%import("js/mboard.js")-->
 <!--%import("css/smbReadStyle.css")-->
 <!--#include("_setting.html")-->
+
+
 <div class="sweetMobileBoard">
 	<div class="smbWhite">
 		<!--//  게시글의 제목, 글쓴이, 날짜, 댓글수 등을 보여주는 박스입니다.  //-->
@@ -58,7 +149,9 @@
 		</div>
 		<!--//  추천수, 공유, 첨부파일 다운로드 버튼을 보여줍니다.  //-->
 		<ul class="smbBottomInfo">
+			<li class="prev"><a href="{$beforeHref}" class="disabled"|cond="!$beforeDoc"><i class="xi-angle-left-min"></i></a></li>
 			<li class="favorite"><a href="#" onclick="doCallModuleAction('document','procDocumentVoteUp','{$document_srl}');return false;"><i class="xi-heart"></i><span>{$lang->cmd_vote} {$oDocument->get('voted_count')}</span></a></li>
+			<li class="next"><a href="{$afterHref}" class="disabled"|cond="!$afterDoc"><i class="xi-angle-right-min"></i></a></li>
 			<li class="tag"><i class="xi-bookmark-o"></i></li>
 			<li class="files"><i class="xi-download"></i></li>
 		</ul>
@@ -99,8 +192,9 @@
 				<div class="profile_image" style="background-image:url({$oDocument->getProfileImage()});" cond="$module_info->display_sign!='N'&&$oDocument->getProfileImage()"></div>
 				<div class="profiles<!--@if($oDocument->getProfileImage())--> floatimg<!--@end-->">
 					<p class="author">{$oDocument->getNickName()}</p>
-					<p class="signature" cond="$oDocument->getSignature()">{$oDocument->getSignature()}</p>
-					<p class="signature" cond="!$oDocument->getSignature()">{$oDocument->get('email_address')}</p>
+					<!--<p class="signature" cond="$oDocument->getSignature()">{$oDocument->getSignature()}</p>-->
+					<!--<p class="signature" cond="!$oDocument->getSignature()">{$oDocument->get('email_address')}</p>-->
+					<p class="signature">{$oDocument->get('email_address')}</p>
 				</div>
 			</div>
 			<div class="mailto">

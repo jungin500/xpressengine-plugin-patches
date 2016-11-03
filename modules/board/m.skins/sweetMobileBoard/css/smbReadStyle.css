@@ -45,8 +45,11 @@
 .smbBottomInfo li { float:left; border-left:1px solid #ececec; box-sizing:border-box; text-align:center; line-height:38px; height:38px; color:#777; }
 .smbBottomInfo li a { display:block; text-align:center; line-height:38px; height:38px; }
 .smbBottomInfo li:first-child { border-left:0; }
-.smbBottomInfo li.favorite { width:66.6%; }
+.smbBottomInfo li.prev { width:8%; }
+.smbBottomInfo li.favorite { width:50.6%; } /* 66.6% original - Jung-In An */
 .smbBottomInfo li.favorite i { color:red; }
+.smbBottomInfo li.next { width:8%; }
+.smbBottomInfo li .disabled { color:#ddd; }
 .smbBottomInfo li.tag { width:16.65%; }
 .smbBottomInfo li.files { width:16.65%; }
 .smbBottomInfo li i { font-size:1.4em; margin-top:1px; display:inline-block; line-height:38px; }
