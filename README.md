@@ -61,6 +61,7 @@ XpressEngine 연구 프로젝트
 	
 	> Changelog
 	* [2016-10-26] XEIcon v1.x 버전에서 XEIcon v2.2.0으로 수정; 각종 아이콘 변경.
+	* [2016-11-03] read.html - 게시물 내에 왼쪽/오른쪽 버튼 추가; 다른 게시물로 바로 이동 가능
 
 ### 2.4.2 blending-blueFly (modules\guestbook\m.skins\blending-blueFly)
     XE Guestbook에 기본 탑재된 blueFly 스킨을 기반으로 제작하였습니다.
