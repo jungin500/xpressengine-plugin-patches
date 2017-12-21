@@ -52,6 +52,13 @@ XpressEngine 연구 프로젝트
 
 ***
 ## 2.3. 모듈 스킨
+### 2.3.1. sketchbook5_member_skin(modules\member\skins\sketchbook5_member_skin)
+	Sketchbook 회원 모듈 스킨(https://www.xpressengine.com/index.php?mid=download&package_id=22646356)의 가입 이메일 발송 템플릿(confirm_member_account_mail.html, confirm_member_new_email.html)의 내용을 수정하고 좀 더 보기 쉽게 만든 패키지입니다.
+	해당 패키지는 XE v1.9.2에서 정상 작동합니다.
+
+	> Changelog
+	* [2016-12-20] confirm_member_account_mail.html 템플릿 수정
+	* [2016-12-20] confirm_member_new_email.html 템플릿 수정
 
 ***
 ## 2.4. 모듈 모바일 스킨
@@ -72,6 +79,14 @@ XpressEngine 연구 프로젝트
         * [2016-10-30] 전체 한글화(이미지 제외)
         * [2016-10-30] 상단 홈버튼 추가
     
+### 2.4.3. sketchbook5_member_m.skin(modules\member\m.skins\sketchbook5_member_m.skin)
+	Sketchbook 회원 모바일 모듈 스킨(https://www.xpressengine.com/index.php?mid=download&package_id=22646468)의 가입 이메일 발송 템플릿(confirm_member_account_mail.html, confirm_member_new_email.html)의 내용을 수정하고 좀 더 보기 쉽게 만든 패키지입니다.
+	해당 패키지는 XE v1.9.2에서 정상 작동합니다.
+
+	> Changelog
+	* [2016-12-20] confirm_member_account_mail.html 템플릿 수정
+	* [2016-12-20] confirm_member_new_email.html 템플릿 수정
+
 ***
 ## 2.5. 위젯 스킨
 
