@@ -1,6 +1,8 @@
 XpressEngine 연구 프로젝트
 ==========================
 
+[![blending.kr](https://i.imgur.com/aCgj9M8.jpg)](https://home.blending.kr)
+
 [블렌딩 홈페이지](http://home.blending.kr)에서 실행되는 XpressEngine의 각종 플러그인, 애드온, 모듈 등에 대해 연구하고, 최신 XpressEngine에 이를 포팅&적용함을 주 목적으로 합니다.
 
 ***
