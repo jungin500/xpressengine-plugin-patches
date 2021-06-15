@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">SoSiFam 한줄 메모 Board</title>
+    <description xml:lang="ko">SoSiFam 한줄 메모 스킨</description>
+    <version>0.1</version>
+    <date>2014-04-25</date>
+    <author email_address="sosifam@070805.co.kr" link="http://sosifam.com/">
+        <name xml:lang="ko">BJ람보</name>
+    </author>
+	<colorset>
+		<color name="white">
+			<title xml:lang="ko">하얀색</title>
+		</color>
+		<color name="black">
+			<title xml:lang="ko">검은색</title>
+		</color>
+	</colorset>
+    <license>재배포금지</license>
+    <extra_vars>
+	
+		<group>
+		<title xml:lang="ko">기본 설정</title>
+
+
+			<var name="infi_page" type="radio">
+				<title xml:lang="ko">페이지 네이션 설정</title>
+				<description xml:lang="ko">페이지 네이션을 설정합니다. 무한 스크롤 선택시 스크롤시 자동으로 페이지 네이션이 됩니다.</description>
+				<options value="infinityEdge">
+					<title xml:lang="ko">무한(자동) 스크롤</title>
+				</options>
+				<options value="page_edge">
+					<title xml:lang="ko">페이지 리스트 바</title>
+				</options>
+			</var>
+
+		<var name="display_depth" type="text" default="10">
+            <title xml:lang="ko">댓글에 답글 수</title>
+            <description xml:lang="ko">댓글에 답글 수를 제한합니다.(기본 10 / 최소 1)</description>
+        </var>
+		
+		<var name="display_time" type="select">
+            <title xml:lang="ko">작성시간 표시</title>
+            <options value="Y">
+                <title xml:lang="ko">출력</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+            </options>
+        </var>
+		
+		<var name="display_notify" type="select">
+
+            <title xml:lang="ko">알림 표시</title>
+			<options value="Y">
+                <title xml:lang="ko">출력</title>
+            </options>
+            <options value="N">
+                <title xml:lang="ko">출력하지 않음</title>
+            </options>
+            
+        </var>	
+
+			<var name="header_title" type="text">
+				<title xml:lang="ko">게시판 제목</title>
+				<description xml:lang="ko">게시판 제목을 입력합니다.</description>
+			</var>
+			
+			<var name="default_style" type="radio">
+				<title xml:lang="ko">게시판 리스트 스타일 선택</title>
+				<description xml:lang="ko">커뮤니케이션, 리뷰 갤러리 스타일, 뉴스 스타일</description>
+				<options value="memo">
+					<title xml:lang="ko">메모스타일 리스트</title>
+				</options>
+			</var>
+			
+		</group>
+		
+		
+		<group>
+		<title xml:lang="ko">커뮤니케이션 설정</title>
+
+			<var name="thumbnail_width" type="text" default="57">
+				<title xml:lang="ko">썸네일 가로크기</title>
+				<description xml:lang="ko">썸네일의 가로 크기를 지정할 수 있습니다. (기본값 권장, 57px)</description>
+			</var>
+
+			<var name="thumbnail_height" type="text" default="48">
+				<title xml:lang="ko">썸네일 세로크기</title>
+				<description xml:lang="ko">썸네일의 세로 크기를 지정할 수 있습니다. (기본값 권장, 48px)</description>
+			</var>
+
+			<var name="comment_cut_size" type="text" default="99">
+				<title xml:lang="ko">코멘트 내용 글자 수</title>
+				<description xml:lang="ko">코멘트 내용 글자 수를 지정할 수 있습니다. (기본값 권장, 99)</description>
+			</var>
+
+		</group>
+
+		<group>
+		<title xml:lang="ko">전체 설정</title>
+		
+			<var name="filter" type="radio">
+				<title xml:lang="ko">카테고리 검색창 위치 설정</title>
+				<description xml:lang="ko">카테고리 및 검색창의 위치를 설정합니다.</description>
+				<options value="lulu">
+					<title xml:lang="ko">우측 세로(권장)</title>
+				</options>
+				<options value="lulu_top">
+					<title xml:lang="ko">상단</title>
+				</options>
+			</var>
+			
+			
+			<var name="no_profile" type="image">
+				<title xml:lang="ko">프로필 대체 이미지</title>
+				<description xml:lang="ko">프로필 이미지가 없을경우 대체 이미지를 지정할 수 있습니다. (80 x 80 권장)</description>
+			</var>
+			
+			<var name="no_list" type="image">
+				<title xml:lang="ko">리스트 섬네일 대체 이미지</title>
+				<description xml:lang="ko">리스트에 섬네일이 없을경우 대체 이미지를 지정할 수 있습니다. (리뷰카드(80x80), 스팟라이트(190x111) 권장)</description>
+			</var>
+		
+			
+			<var name="duration_new" type="text" default="48">
+				<title xml:lang="ko">새로운 글 표시 시간 (hours)</title>
+				<description xml:lang="ko">새로 등록된 게시물의 표시시간을 정합니다.(Green Bullet) </description>
+			</var>
+			
+			<var name="title_cut_size" type="text">
+				<title xml:lang="ko">제목 글자 수</title>
+				<description xml:lang="ko">제목 글자 수를 입력합니다. (0또는 비워주시면 자르지 않습니다)</description>
+			</var>
+			
+			<var name="text_cut_size" type="text" default="220">
+				<title xml:lang="ko">내용 글자 수</title>
+				<description xml:lang="ko">내용 글자 수를 입력합니다. (기본값 권장, 220)</description>
+			</var>
+			
+			
+			
+		</group>
+		
+		
+
+		
+    </extra_vars>
+</skin>
+

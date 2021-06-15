@@ -62,6 +62,12 @@ XpressEngine 연구 프로젝트
 	* [2016-12-20] confirm_member_account_mail.html 템플릿 수정
 	* [2016-12-20] confirm_member_new_email.html 템플릿 수정
 
+### 2.3.2. sosi_memo(modules\board\skins\sosi_memo)
+	Rhymix 2.0.11에서 동작가능한 스킨입니다.
+
+	> Changelog
+	* [2021-06-16] Rhymix 2.0.11에서 content가 없을 경우 글을 쓸 수 없는 버그 수정
+
 ***
 ## 2.4. 모듈 모바일 스킨
 ### 2.4.1. sweetMobileBoard (modules\board\m.skins\sweetMobileBoard)
@@ -88,6 +94,12 @@ XpressEngine 연구 프로젝트
 	> Changelog
 	* [2016-12-20] confirm_member_account_mail.html 템플릿 수정
 	* [2016-12-20] confirm_member_new_email.html 템플릿 수정
+
+### 2.4.4. sosifam_memo(modules\board\m.skins\sosifam_memo)
+	Rhymix 2.0.11에서 동작가능한 스킨입니다.
+
+	> Changelog
+	* [2021-06-16] Rhymix 2.0.11에서 content가 없을 경우 글을 쓸 수 없는 버그 수정
 
 ***
 ## 2.5. 위젯 스킨

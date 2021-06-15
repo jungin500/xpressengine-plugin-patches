@@ -1,0 +1,238 @@
+@charset "utf-8";
+
+/* 웹 폰트설정 */
+
+@font-face {
+	font-family: ng;
+	font-style: normal;
+	font-weight: 700;
+	src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot);
+	src: local(※), url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff2) format('x-woff2'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.woff) format('woff'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+	font-family: ng;
+	font-style: normal;
+	font-weight: 400;
+	src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot);
+	src: local(※), url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff2) format('x-woff2'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff) format('woff'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+	font-family: ng;
+	font-style: normal;
+	font-weight: 800;
+	src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot);
+	src: local(※), url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff2) format('x-woff2'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.woff) format('woff'),
+		 url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+.clarity-font { font-family: 'Helvetica Neue', Helvetica, 나눔고딕, NanumGothic, ng, 'Open Sans', 'Myriad Pro', Verdana, 돋움, dotum, sans-serif; }
+.clarity-dotum { font-family: 돋움, dotum, 'Helvetica Neue', Helvetica, 나눔고딕, NanumGothic, ng, 'Open Sans', 'Myriad Pro', Verdana, sans-serif; }
+
+
+/* Clarity white Button  */
+
+.clarity-white,
+.clarity-white span,
+.clarity-white.arrow { background:url(../img/clarity-white.png); }
+
+.clarity-white { 
+	position:relative; 
+	display: inline-block;
+	padding:0 0 0 1px; 
+	height:25px; border:0;
+}
+.clarity-white.arrow {
+	background-position: 0 -25px;
+	padding-left:5px; 
+}
+
+.clarity-white span { 
+	padding:0 7px 0 6px;
+	background-position: right top;
+	
+	display: inline-block;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	white-space: nowrap;
+	cursor: pointer;
+	
+	font-family: 나눔고딕, NanumGothic, ng, 'Helvetica Neue', Helvetica, 'Open Sans', 'Myriad Pro', Verdana, 돋움, dotum, sans-serif;
+	color: #666;
+	font-size: 11px; 
+	font-weight:700;
+	height:25px; line-height:25px;
+
+}
+.clarity-white.on span { font-weight:800; }
+.clarity-white.arrow span {
+	padding:0 7px 0 5px;
+	color:#008ef2;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+.clarity-white.mr-f2 { margin-left:2px; }
+.clarity-white.mr-f4 { margin-right:4px; }
+.btn_reply.mr-f4 { margin-right:4px; }
+
+/* Clarity white Button - icon */
+
+.clarity-white .cla-icon { padding:0 7px 0 22px; position: relative;}
+.cla-icon:before {
+	display: block;
+	content: "";
+	position: absolute;
+	background-image:url(../img/sprite.png);	
+	width:22px; height:16px; left:0; top:2px;
+}
+.cla-tag:before { background-position: -7px -9px; }
+
+
+/* Clarity Class */ 
+
+.cfixsosi { zoom:1 }
+.cfixsosi:after { content: '.'; display:block; clear:both; visibility:hidden; line-height:0; height:0; overflow: hidden; }
+.left { float:left}
+.right { float:right}
+.relative { position:relative }
+
+.text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.clarity-trans {
+	-webkit-transition: opacity 0.15s linear;
+	-moz-transition: opacity 0.15s linear;
+	transition: opacity 0.15s linear;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+.clarity-trans:hover {
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+}
+.clarity-thumb::after {
+	-webkit-box-shadow: inset 0 0 0 3px rgba(0,0,0,0.31); 
+	-moz-box-shadow: inset 0 0 0 3px rgba(0,0,0,0.31); 
+	box-shadow: inset 0 0 0 3px rgba(0,0,0,0.31); 
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	
+	width: 100%;
+	height: 100%;
+	display: block;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.avatar-radius::after {
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.avatar-icons {
+	border-radius: 100px;
+	display: block;
+}
+
+
+
+
+.corner-top {
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	-o-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+.corner-bottom {
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	-o-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+.corner-all {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+}
+.bullet-item:before {
+	content: "•";
+	left: -14px;
+	top: 1px;
+	font-family: sans-serif;
+	font-size: 12px;
+}
+
+
+
+/* HTML Reset */
+a {
+	color: #008ef2;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, 
+code, form, fieldset, legend, input, textarea, p, a, blockquote, th, td {
+	margin:0; padding:0; border: 0;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+ol,ul { list-style:none; }
+
+fieldset,img { border:0; }
+
+address, caption, cite, code, dfn, em, th, var {
+	font-style:normal;
+	/* font-weight:normal; */
+}
+
+caption, th, td {
+	text-align: left;
+	/* font-weight:normal; */
+}
+
+h1,h2,h3,h4,h5,h6 { font-size:100%;}
+
+abbr, acronym { border:0; font-variant:normal; }
+
+sup { vertical-align:text-top;}
+sub { vertical-align:text-bottom;}
+
+input, textarea, select { font-family:inherit; font-size:inherit; font-weight:inherit; *font-size:100%; }
+
+legend { color:#000; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+a, a:visited { text-decoration: none; }
+a:hover,
+a:active,
+a:focus { text-decoration:none; }
+a { cursor: pointer; }
+
+
+
+

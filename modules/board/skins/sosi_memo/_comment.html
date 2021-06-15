@@ -1,0 +1,144 @@
+<!-- COMMENT -->
+<div class="avicii-feedback clarity-font" id="comment">
+
+	<div class="avicii-header">
+    	<span>{$oDocument->getCommentcount()}&nbsp;Comments</span>
+    	<span class="trackback" cond="$oDocument->allowTrackback()">{$oDocument->getTrackbackUrl()}</span>
+    </div>
+    
+    <ul class="avicii-list" cond="$oDocument->getCommentcount()">
+    
+    	<li loop="$oDocument->getComments()=>$key,$comment" class="avicii-block cfixsosi"|cond="!$comment->get('depth')" class="avicii-block cfixsosi lulu levels{($comment->get('depth'))}"|cond="$comment->get('depth')" id="comment_{$comment->comment_srl}">
+        
+            <a class="avicii-thumb clarity-thumb corner-all" href="#comment_{$comment->comment_srl}">
+                <img class="avicii-thumb-img corner-all" src="{$comment->getProfileImage()}" alt="Profile" cond="$comment->getProfileImage()" />
+                <img class="avicii-thumb-img corner-all" src="{$module_info->no_profile}" alt="Profile" cond="!$comment->getProfileImage() && $module_info->no_profile" />
+                <img class="avicii-thumb-img corner-all" src="./img/no-profile.jpg" alt="Profile" cond="!$comment->getProfileImage() && !$module_info->no_profile"  />
+            </a>
+            
+            <div class="avicii cfixsosi">
+                    
+                <div class="avicii-info">
+                    <a cond="!$comment->member_srl" href="{$comment->homepage}">{$comment->getNickName()}</a>
+                    <a cond="$comment->member_srl" href="#popup_menu_area" class="member_{$comment->member_srl}" onclick="return false">{$comment->getNickName()}</a>
+                    <span class="bullet">•</span>
+                    <span>{getTimeGap($comment->get('regdate'), "Y.m.d H:i")}</span>
+                </div>
+                
+                <div class="avicii-content cfixsosi">
+                    <!--@if(!$comment->isAccessible())-->
+                    <form action="./" method="get" class="xe_content" onsubmit="return procFilter(this, input_password)">
+                        <p><label for="cpw_{$comment->comment_srl}">{$lang->msg_is_secret} {$lang->msg_input_password}</label></p>
+                        <p><input type="password" name="password" id="cpw_{$comment->comment_srl}" class="iText" /><input type="submit" class="btn" value="{$lang->cmd_input}" /></p>
+                        <input type="hidden" name="mid" value="{$mid}" />
+                        <input type="hidden" name="page" value="{$page}" />
+                        <input type="hidden" name="document_srl" value="{$comment->get('document_srl')}" />
+                        <input type="hidden" name="comment_srl" value="{$comment->get('comment_srl')}" />
+                    </form>
+                    <!--@else-->
+                    {$comment->getContent(false)}
+                    <!--@end-->              
+                </div>
+                
+
+                <ul class="avicii-footer">
+                	<li class="avicii-footer-item left vote-border">
+                    	<a href="#" class="vote-up" onclick="doCallModuleAction('comment','procCommentVoteUp','{$comment->comment_srl}'); return false;">{$comment->get('voted_count')?$comment->get('voted_count'):0}</a>
+                	</li>
+                    <li class="avicii-footer-item left">
+                    	<a href="#" class="vote-down" onclick="doCallModuleAction('comment','procCommentVoteDown','{$comment->comment_srl}'); return false;">{(int)$comment->get('blamed_count')}</a> 
+                	</li>
+                    
+                    <li class="avicii-footer-item right">
+                    	<a cond="$is_logged" class="comment_{$comment->comment_srl} this" href="#popup_menu_area" onclick="return false">{$lang->cmd_comment_do}</a>
+                	</li>
+                    
+                    <li class="avicii-footer-item right" cond="$comment->isGranted()||!$comment->get('member_srl')">
+                    	<a href="{getUrl('act','dispBoardDeleteComment','comment_srl',$comment->comment_srl)}" class="delete">{$lang->cmd_delete}</a>
+                	</li>
+                    
+                    <li class="avicii-footer-item right" cond="$comment->isGranted()||!$comment->get('member_srl')">
+                    	<a href="{getUrl('act','dispBoardModifyComment','comment_srl',$comment->comment_srl)}" class="modify">{$lang->cmd_modify}
+                	</li>
+                    
+                    <li class="avicii-footer-item right">
+                    	<a cond="$oDocument->allowComment()" href="{getUrl('act','dispBoardReplyComment','comment_srl',$comment->comment_srl)}" class="reply">{$lang->cmd_reply}</a> 
+                	</li>
+                </ul>
+
+
+            </div><!-- .avicii -->
+
+        </li>
+    
+    </ul><!-- .avicii-list -->
+    
+    <div class="elise-pagination cfixsosi" cond="$oDocument->comment_page_navigation">
+    
+        <a href="{getUrl('cpage',1)}#comment" class="page-direction page-prev"><span class="arrow-prev">←</span>First Page</a> 
+        
+        <div class="page-list">
+        	<block loop="$page_no=$oDocument->comment_page_navigation->getNextPage()">
+            
+            
+            	<span cond="$cpage==$page_no" class="page page-current"><span class="page-current-mark"></span>{$page_no}</span>
+                <a cond="$cpage!=$page_no" class="page page-link" href="{getUrl('cpage',$page_no)}#comment">{$page_no}</a>
+			</block>
+        </div>
+        
+        <a href="{getUrl('cpage',$oDocument->comment_page_navigation->last_page)}#comment" class="page-direction page-next">Last Page<span class="arrow-next">→</span></a>
+        
+        
+    </div><!-- .elise-pagination -->
+
+
+</div><!-- .avicii-feedback -->
+
+
+<div class="feedback" id="comment">
+
+
+	<form cond="$grant->write_comment && $oDocument->isEnableComment()" action="./" method="post" onsubmit="return procFilter(this, insert_comment)" class="write_comment" id="write_comment">
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="document_srl" value="{$oDocument->document_srl}" />
+		<input type="hidden" name="comment_srl" value="" />
+        <input type="hidden" name="content" value="" />
+        {$oDocument->getCommentEditor()}
+		<div class="write_author">
+			<span class="item" cond="!$is_logged">
+				<label for="userName" class="iLabel">{$lang->writer}</label>
+				<input type="text" name="nick_name" id="userName" class="iText userName" />
+			</span>
+			<span class="item" cond="!$is_logged">
+				<label for="userPw" class="iLabel">{$lang->password}</label>
+				<input type="password" name="password" id="userPw" class="iText userPw" />
+			</span>
+			<span class="item" cond="!$is_logged">
+				<label for="homePage" class="iLabel">{$lang->homepage}</label>
+				<input type="text" name="homepage" id="homePage" class="iText homePage" />&nbsp;
+			</span>
+			<input cond="$is_logged" type="checkbox" name="notify_message" value="Y" id="notify_message" class="iCheck" />
+			<label cond="$is_logged" for="notify_message">{$lang->notify}</label>
+			<input cond="$module_info->secret=='Y'" type="checkbox" name="is_secret" value="Y" id="is_secret" class="iCheck" />
+			<label cond="$module_info->secret=='Y'" for="is_secret">{$lang->secret}</label>
+		</div>
+		<div class="btnArea">
+			<button type="submit" class="clarity-white"><span>{$lang->cmd_comment_registration}</span></button>
+		</div>
+	</form>
+    
+    
+    
+    
+</div>
+
+
+
+<div class="fbFooter"> 
+	<a href="{getUrl('document_srl','')}" class="clarity-white"><span>목록보기</span></a>
+</div>
+
+
+
+
+<!-- /COMMENT -->

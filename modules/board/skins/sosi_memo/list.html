@@ -1,0 +1,24 @@
+<include target="_header.html" />
+<include cond="$oDocument->isExists()" target="_read.html" />
+
+
+
+<include target="_style.memo.html" />
+
+
+<div class="list_footer {$module_info->infi_page}">
+
+    <div class="elise-pagination cfix" cond="$document_list || $notice_list" id="pagess">
+        <a href="{getUrl('page','','document_srl','','division',$division,'last_division',$last_division)}" class="page-direction page-prev"><span class="arrow-prev">←</span>First Page</a> 
+        <div class="page-list">
+        	<block loop="$page_no=$page_navigation->getNextPage()">
+            	<span cond="$page==$page_no" class="page page-current"><span class="page-current-mark"></span>{$page_no}</span>
+                <a cond="$page!=$page_no" class="page page-link" href="{getUrl('page',$page_no,'document_srl','','division',$division,'last_division',$last_division)}">{$page_no}</a>
+			</block>
+        </div>
+        <a href="{getUrl('page',$page_navigation->last_page,'document_srl','','division',$division,'last_division',$last_division)}" class="page-direction page-next">Last Page<span class="arrow-next">→</span></a>
+    </div><!-- .elise-pagination -->
+   
+</div><!-- .list-footer -->
+
+<include target="_footer.html" />

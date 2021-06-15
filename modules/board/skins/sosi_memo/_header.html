@@ -1,0 +1,81 @@
+<load target="css/board.default.css" />
+<load target="css/clarity.default.css" />
+<load target="css/normalize.css" />
+<load target="js/jquery-ias.min.js" cond="$module_info->infi_page == 'infinityEdge'" />
+<load target="js/jquery.masonry.min.js" cond="$module_info->infi_page == 'infinityEdge'" />
+
+<style type="text/css">
+
+/* 커뮤니케이션 */
+/* .pix-lulu { width:{($module_info->pix_lulu)-($module_info->thumbnail_width)-11}px } */ /* 셈네일 있을때 리스트 컨텐츠 크기 */
+/* .pix-lulu-help { width:{($module_info->pix_lulu)}px  } */ /* 썸네일 없을때 리스트 컨텐츠 크기 */
+/* .pix-lulu-comment { width:{($module_info->pix_lulu)-32}px } */
+/* .pix-lulu-notice { width:{($module_info->pix_lulu)+57}px } */
+
+
+/* 리뷰 카드 */
+.elise-notice { width:{($module_info->elise_width)*2-26}px}
+.elise-width { width:{($module_info->elise_width)-($module_info->spider_width)-40}px} 
+.elise-width-doran {  width:{($module_info->elise_width)-30}px }
+.elise-list .elise-info  { height:{($module_info->elise_height)-51}px }
+.elise-thumb,
+.elise-thumb img { width:{$module_info->spider_width}px; height:{$module_info->spider_height}px; }
+
+
+/* 스팟라이트 */
+.spot-notice { width:{($module_info->spot_width)-42}px}
+.spot-width { width:{($module_info->spot_width)-($module_info->light_width)-20}px }
+.spot-width-light { width:{$module_info->spot_width}px }
+.spot-thumb,
+.spot-thumb img { width:{$module_info->light_width}px; height:{$module_info->light_height}px; }
+
+
+</style>
+
+
+
+<!--@if($order_type == "desc")-->
+    {@ $order_type = "asc"; }
+<!--@else-->
+    {@ $order_type = "desc"; }
+<!--@end-->
+
+
+<block cond="!$module_info->duration_new = (int)$module_info->duration_new">{@ $module_info->duration_new = 12 }</block>
+{@ $cate_list = array(); $current_key = null; }
+<!--@foreach($category_list as $key=>$val)-->
+	<!--@if(!$val->depth)-->
+		{@
+			$cate_list[$key] = $val;
+			$cate_list[$key]->children = array();
+			$current_key = $key;
+		}
+	<!--@elseif($current_key)-->
+		{@ $cate_list[$current_key]->children[] = $val }
+	<!--@end-->
+<!--@end-->
+
+
+<div class="board">
+
+
+	<div class="clarity-header cfixsosi sosi">
+    
+        <div class="header-text"><a href="{getUrl('document_srl','')}">{$module_info->header_title}</a></div>	
+        
+
+        <div class="relative right cfixsosi sosi">
+            <a class="clarity-white right arrow mr-f2" href="#"><span>{number_format($total_count)}</span></a>     
+            <a class="clarity-white right" href="{getUrl('act','dispBoardWrite','document_srl','')}" ><span>@{$lang->cmd_write}</span></a>
+            <a class="clarity-white right" title="{$lang->tag}" href="{getUrl('act','dispBoardTagList')}"><span class="cla-icon cla-tag">{$lang->tag}</span></a>
+            
+            <a class="clarity-white right" cond="$grant->manager" href="{getUrl('act','dispBoardAdminBoardInfo')}" title="{$lang->cmd_setup}"><span>{$lang->cmd_setup}</span></a>
+        	<a class="clarity-white right" cond="$grant->manager" href="{getUrl('','module','document','act','dispDocumentManageDocument')}" onclick="popopen(this.href,'manageDocument'); return false;">
+            	<span>{$lang->cmd_manage_document}</span>
+            </a>
+
+           
+        </div><!-- .relative -->
+	
+	</div><!-- .clarity-header -->
+
